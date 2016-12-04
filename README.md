@@ -1,7 +1,7 @@
 # FPL-Stats
 
-First Draft 
-Proposal for GA WDI-Diamonds Final project. 
+###First Draft 
+###Proposal for GA WDI-Diamonds Final project. 
 
 My idea is for a website that tracks player statistics for those playing the official Barclay's Premiere League fantasy game (https://fantasy.premierleague.com/a/home). 
 
@@ -13,22 +13,24 @@ I would probably do the initial calculations in Excel to make sure I get the cor
 
 I would also like to include columns for expected/projected score and perhaps a custom column where registered users could enter their own projections. 
 
-In addition, clicking on each player's name would render a line graph showing their points each week and cumulative score. I'd like to calculate a line for the expected total if a player's pace continues and a line for an expected final value. The difference between the two could show, all things being equal,  how the player's performance might change over the rest of the season. 
+In addition, clicking on each player's name would render a line graph showing their points each week and cumulative score. I'd like to calculate a line for the expected total if a player's pace continues and a line for an expected final value. The difference between the two *could* show, all things being equal,  how the player's performance might change over the rest of the season. 
 
 14 out of 38 games have been played in the 2016-17 season, which will end around mid-May. 
 
-Stack: 
-HTML/CSS
+##Stack: 
 
-JavaScript
+HTML/CSS 
 
-Chartjs
+JavaScript 
+
+Chartjs 
 
 PostgreSQL 
 
 Node/Express
 
-Questions:
+
+##Questions:
 
 PSQL makes sense to me since stats would be in a table format but datum are not really relational, would a Mongo document for each player be a better way to organize this? Is it blasphemy to use Mongo for the data and psql to hold info for registered users?
 
