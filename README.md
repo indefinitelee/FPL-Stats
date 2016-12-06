@@ -36,3 +36,39 @@ PSQL makes sense to me since stats would be in a table format but datum are not 
 
 I'd like to use React but not sure where it would be added in here. I suppose one table column could be the "custom" total value, which would automatically recalculate other columns such as pace. 
 
+
+Concept: 
+Football is the most popular sport in the world and online fantasy sports are a billion dollar industry. While American-centric sports such as football, basketball, and baseball have many options for statistical analysis, there is a dearth of it - at least in the same format as other sports, for football, (that is, soccer). 
+
+Technology: I'd like to use React but am not convinced there is a use case for it in my current concept. PSQL backend, ChartJs graphs, bcrypt for storing passwords. Not gonna mess with auth until the rest is done. 
+
+User Stories: 
+Rafael is a soccer afficionado and wants to see what fantasy sports is like. He signs up for the official Barclay's Premiere Leage fantasy game but is not sure which players to select for his team. By using FPL-Stats he can see which players score the most points, but just as importantly, he can see which are the best value for their cost. Since he is such a soccahead he can enter his own estimates of how many points a player will score and see the differential betweeen his estimates and the boilerplate estimates. This allows Rafael to get ahead of his competition. 
+
+
+Wireframes: Soon to be on the imgur front page - keep refreshing!
+
+
+Time Table (NEW!!!): Include an ideal time table for yourself with dates. Include time for planning. By what dates do you want to get each part done? This should be regimented and atainable, but we won't be holding you to it.
+
+    Tuesday: 
+    Approval! 
+    Parse data object, setup database, front-end skeleton
+    
+    Wednesday: 
+    Set up routes
+      -- set up bcrypt login
+     
+     Thursday: 
+     Figure out how to sort the table of values
+      -- React? I dunno, any suggestions????????
+      
+      Friday:
+      Keep on keepin' on. 
+      
+      Saturday: 
+      Chart JS
+    
+      
+
+Key Challenges (and Proof of Concept): accessing object, sorting table of stats, chartjs?, 
