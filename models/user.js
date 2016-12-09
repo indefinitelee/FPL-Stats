@@ -25,7 +25,7 @@ function authenticate(req, res, next) {
         const myToken = jwt.sign({ username: req.body.username }, process.env.SECRET);
         res.status(200).json(myToken);
       } else {
-        res.status(500).send('fuck u fite me irl');
+        res.status(500).send('fdajlssklkl');
       }
       next();
     })
