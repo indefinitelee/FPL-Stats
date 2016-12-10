@@ -7,8 +7,13 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      players: []
   }
 }
+
+  getStats() {
+
+  }
 
   render() {
     return (
