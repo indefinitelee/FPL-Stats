@@ -1,10 +1,15 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS secrets;
+DROP TABLE IF EXISTS user_predictions;
+DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS players;
+
 BEGIN;
 
 CREATE TABLE users (
 id: serial primary key,
 username: varchar not null,
 password: varchar not null,
-email: varchar not null,
 );
 
 CREATE TABLE secrets(

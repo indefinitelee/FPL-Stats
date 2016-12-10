@@ -1,11 +1,11 @@
 import React from 'react';
-import { BarChart } from 'rd3';
+import { LineChart } from 'rd3';
 import styles from './Graph.css';
 
 const Graph = props => {
   return (
     <div className={styles['barchart']}>
-      <BarChart
+      <LineChart
         data={props.data}
         height={450}
         width={750}

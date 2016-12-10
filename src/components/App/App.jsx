@@ -17,8 +17,11 @@ class App extends Component {
         username: '',
         password: ''
       },
-      currentToken: '',
-      players: []
+      players: [],
+      chartTitle: 'Actual vs. Predicted Points',
+      xAxisLabel: 'Game Week',
+      yAxisLabel: 'Points',
+      currentToken: ''
   }
 }
 
@@ -121,6 +124,13 @@ class App extends Component {
           />
         </div>
           <div className={styles["graph-container"]}>
+            <Graph
+              height={this.state.height}
+              chartTitle={this.state.chartTitle}
+              xAxisLabel={this.state.xAxisLabel}
+              yAxisLabel={this.state.yAxisLabel}
+              data={this.state.players}
+            />
             <div className={styles["chart"]}>
           </div>
         </div>
