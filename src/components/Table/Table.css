@@ -1,0 +1,21 @@
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 2px 5px;
+}
+
+.jsonOdd {
+  background: #eee;
+}
+
+.rowSelected {
+  background: #ffe;
+}
+.cellSelected {
+  background: #eef;
+}
+.headerSelected {
+  color: blue;
+}

@@ -4,6 +4,7 @@ import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
+import Table from '../Table/Table.jsx';
 
 
 class App extends Component {
@@ -17,23 +18,51 @@ class App extends Component {
       loginForm: {
         username: '',
         password: ''
-      }
-      // players: [],
-      // chartTitle: 'Actual vs. Predicted Points',
-      // xAxisLabel: 'Game Week',
-      // yAxisLabel: 'Points',
-      // currentToken: ''
+      },
+      players: [],
+      chartTitle: 'Actual vs. Predicted Points',
+      xAxisLabel: 'Game Week',
+      yAxisLabel: 'Points',
+      currentToken: ''
   }
 }
 
- // {
- //    name: "Actual",
- //    values: [ { x: 1, y: 20 }, ...]
- //  },
- //  {
- //    name: "Prediction",
- //    values: [ { x: 1, y: 82 }, ...]
- //  }
+    componentWillMount(){
+    console.log('mounted')
+    this.getStats();
+  }
+
+  getStats(req, res, next){
+  fetch(`http://fantasy.premierleague.com/drf/bootstrap-static`, {
+    mode:'no-cors'
+  })
+    .then(r => r.json())
+    .then((data) => {
+      res.rows = data.elements.map((player) => {
+        return {
+          firstName: player.first_name,
+          secondName: player.second_name,
+          team: player.team,
+          position: player.element_type,
+          cs: player.clean_sheets,
+          goalsConceded: player.goals_conceded,
+          saves: player.saves,
+          goalsScored: player.goals_scored,
+          assists: player.assists,
+          yc: player.yellow_cards,
+          rc: player.red_cards,
+          ppg: player.points_per_game,
+          nowCost: player.now_cost,
+          totalPoints: player.total_points,
+          onPace: (parseInt(ppg)*38)
+        }
+      })
+      console.log(player)
+      next();
+    })
+    .catch(error => next(error));
+  }
+
 
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
@@ -115,9 +144,6 @@ class App extends Component {
       console.log('after logout ', this.state)
     })
   }
-  // getStats() {
-
-  // }
 
   render() {
     return (
@@ -141,7 +167,9 @@ class App extends Component {
               yAxisLabel={this.state.yAxisLabel}
               data={this.state.players}
             />
-            <div className={styles["chart"]}>
+            <div className={styles["table"]}>
+            <Table
+            />
           </div>
         </div>
       </div>
