@@ -25,6 +25,15 @@ class App extends Component {
   }
 }
 
+ // {
+ //    name: "Actual",
+ //    values: [ { x: 1, y: 20 }, ...]
+ //  },
+ //  {
+ //    name: "Prediction",
+ //    values: [ { x: 1, y: 82 }, ...]
+ //  }
+
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
     this.setState({
