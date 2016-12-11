@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './App.css';
-import Header from './Header/Header.jsx';
+import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 
