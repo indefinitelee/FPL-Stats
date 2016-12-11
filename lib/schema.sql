@@ -7,9 +7,9 @@ DROP TABLE IF EXISTS players;
 BEGIN;
 
 CREATE TABLE users (
-id: serial primary key,
-username: varchar not null,
-password: varchar not null,
+id SERIAL PRIMARY KEY,
+username VARCHAR NOT NULL,
+password VARCHAR NOT NULL
 );
 
 CREATE TABLE secrets(
@@ -19,34 +19,34 @@ CREATE TABLE secrets(
 );
 
 CREATE TABLE user_predictions (
-id: serial primary key,
-user_id: references users,
-player_id: references players,
-prediction: integer,
+id SERIAL PRIMARY KEY,
+user_id VARCHAR,
+player_id VARCHAR,
+prediction INTEGER
 );
 
 CREATE TABLE players (
-id: serial primary key,
-second_name: text not null,
-first_name: text not null,
-team: varchar,
-element_type: integer,
-now_cost: integer,
-goals_scored: integer,
-assists: integer,
-goals_conceded: integer,
-saves: integer,
-bonus: integer,
-clean_sheets: integer,
-yellow_cards: integer,
-red_cards: integer,
-points_per_game: varchar,
-total_points: integer,
+id SERIAL PRIMARY KEY,
+second_name TEXT NOT NULL,
+first_name TEXT NOT null,
+team VARCHAR,
+element_type INTEGER,
+now_cost INTEGER,
+goals_scored INTEGER,
+assists INTEGER,
+goals_conceded INTEGER,
+saves INTEGER,
+bonus INTEGER,
+clean_sheets INTEGER,
+yellow_cards INTEGER,
+red_cards INTEGER,
+points_per_game VARCHAR,
+total_points INTEGER
 );
 
 CREATE TABLE teams (
-id: integer,
-name: text,
+id INTEGER,
+name TEXT
 );
 
 COMMIT;
