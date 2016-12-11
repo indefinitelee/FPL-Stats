@@ -17,12 +17,12 @@ class App extends Component {
       loginForm: {
         username: '',
         password: ''
-      },
-      players: [],
-      chartTitle: 'Actual vs. Predicted Points',
-      xAxisLabel: 'Game Week',
-      yAxisLabel: 'Points',
-      currentToken: ''
+      }
+      // players: [],
+      // chartTitle: 'Actual vs. Predicted Points',
+      // xAxisLabel: 'Game Week',
+      // yAxisLabel: 'Points',
+      // currentToken: ''
   }
 }
 
@@ -37,6 +37,7 @@ class App extends Component {
 
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
+    console.log(fieldsArr)
     this.setState({
       signupForm: {
         username: fieldsArr[0].value,
