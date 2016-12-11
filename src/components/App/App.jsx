@@ -3,6 +3,7 @@ import styles from './App.css';
 import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
+import Graph from '../Graph/Graph.jsx';
 
 
 class App extends Component {
@@ -114,9 +115,9 @@ class App extends Component {
       console.log('after logout ', this.state)
     })
   }
-  getStats() {
+  // getStats() {
 
-  }
+  // }
 
   render() {
     return (
