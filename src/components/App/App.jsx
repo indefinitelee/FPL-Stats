@@ -37,14 +37,13 @@ class App extends Component {
 
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
-    console.log(fieldsArr)
     this.setState({
       signupForm: {
         username: fieldsArr[0].value,
         password: fieldsArr[1].value
       }
     }, () => {
-      console.log(this.state)
+      console.log(this.state.signupForm)
     })
   }
 
@@ -56,7 +55,7 @@ class App extends Component {
         password: fieldsArr[1].value
       }
     }, () => {
-      console.log(this.state)
+      console.log(this.state.loginForm)
     })
   }
 
