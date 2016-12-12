@@ -4,13 +4,13 @@ import styles from './Graph.css';
 
 const Graph = props => {
   return (
-    <div className={styles['barchart']}>
+    <div className={styles['linechart']}>
       <LineChart
         data={props.data}
         height={450}
         width={750}
         fill={'#234981'}
-        title={props.chartTitle}
+        title={props.graphTitle}
         yAxisLabel={props.yAxisLabel}
         xAxisLabel={props.xAxisLabel}
       />
