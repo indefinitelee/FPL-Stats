@@ -1,10 +1,11 @@
 const fetch = require('node-fetch');
 
-function getTableStats(req, res, next){
-  fetch(`fantasy.premierleague.com/drf/bootstrap-static`)
+function getStatsTable(req, res, next){
+  console.log('fetching player data!')
+  fetch(`https://fantasy.premierleague.com/drf/bootstrap-static`)
     .then(r => r.json())
-    .then((data) => {
-      res.rows = data.elements.map((player) => {
+    .then((players) => {
+      let playerData = players.elements.map((player) => {
         return {
           firstName: player.first_name,
           secondName: player.second_name,
@@ -20,22 +21,15 @@ function getTableStats(req, res, next){
           ppg: player.points_per_game,
           nowCost: player.now_cost,
           totalPoints: player.total_points,
-          // will this work?
-          onPace: parseInt(ppg)*38
-          // continue writing for all keys you want
-          // follow the react nyc firehosues for how to renderall
-          // check out using that react library to make into a table.
-          // then 3ds for graphs
+          onPace: (parseInt(player.points_per_game)*38)
         }
       })
-      console.log(player)
+      console.log(playerData)
+      res.players = playerData;
       next();
     })
-    .catch((error) => {
-      console.log("Error is ", error);
-      res.error = error;
-      next();
-    });
-};
+    .catch(err => console.log(err));
+  }
 
-module.exports = { getTableStats };
+
+module.exports = { getStatsTable };

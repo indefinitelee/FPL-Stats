@@ -1,7 +1,7 @@
 const apiRouter = require('express').Router();
-const { getAllSecrets } = require('../models/api.js')
+const { getStatsTable } = require('../services/stats-api.js')
 
 apiRouter.route('/')
-  .get(getAllSecrets, (req, res, next) => res.json(res.secrets));
+  .get(getStatsTable, (req, res, next) => res.json(res.players));
 
 module.exports = apiRouter;

@@ -31,44 +31,45 @@ class App extends Component {
 
 //table stuff
     componentDidMount(){
-      console.log('Did mount')
+      console.log('Did mount!')
       this.getStatsTable();
     }
 
+// get the data object from API and parse out the fields I want, then send to state
     getStatsTable(){
-    fetch(`http://fantasy.premierleague.com/drf/bootstrap-static`, {
-      mode:'no-cors'
-    })
-    .then(r => r.json())
-//why map not filter?
-    .then((players) => {
-      res.rows = players.elements.map((player) => {
-        return {
-          firstName: player.first_name,
-          secondName: player.second_name,
-          team: player.team,
-          position: player.element_type,
-          cs: player.clean_sheets,
-          goalsConceded: player.goals_conceded,
-          saves: player.saves,
-          goalsScored: player.goals_scored,
-          assists: player.assists,
-          yc: player.yellow_cards,
-          rc: player.red_cards,
-          ppg: player.points_per_game,
-          nowCost: player.now_cost,
-          totalPoints: player.total_points
-          // onPace: (parseInt(ppg)*38)
-          }
-        })
-  // unexpected end of input somewhere here
-        this.setState({
-          playersTable: res.rows
+      fetch(`/api`)
+      .then((players) => {
+      this.setState({
+          playersTable: playerData
         });
-  // can i set state here, do I need to??
       })
       .catch(err => console.log(err));
     }
+    //   .then(r => r.json())
+    //   .then((players) => {
+    //     console.log(players)
+    //     let playerData = players.elements.map((player) => {
+    //       return {
+    //         firstName: player.first_name,
+    //         secondName: player.second_name,
+    //         team: player.team,
+    //         position: player.element_type,
+    //         cs: player.clean_sheets,
+    //         goalsConceded: player.goals_conceded,
+    //         saves: player.saves,
+    //         goalsScored: player.goals_scored,
+    //         assists: player.assists,
+    //         yc: player.yellow_cards,
+    //         rc: player.red_cards,
+    //         ppg: player.points_per_game,
+    //         nowCost: player.now_cost,
+    //         totalPoints: player.total_points
+    //         // onPace: (parseInt(ppg)*38)
+    //       }
+    //     }) // End of map function
+    // // unexpected end of input somewhere here
+    // can i set state here, do I need to??
+
 // table component asks for the state as a prop i guess
 // end table stuff
 //
