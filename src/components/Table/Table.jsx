@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-const JsonTable = require('react-json-table');
-import styles from './Table.css';
+// import React, { Component } from 'react';
+// import JsonTable from 'react-json-table';
+// import styles from './Table.css';
 
-React.render(
-  <JsonTable rows={ this.props.playersTable }/>,
-  document.body);
+// const Table = props =>
+// React.render(
+//   <JsonTable rows={ this.props.playersTable }/>,
+//   document.body);
 
+// export default Table;

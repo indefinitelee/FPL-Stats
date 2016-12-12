@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
-import Table from '../Table/Table.jsx';
+import JsonTable from 'react-json-table';
 
 
 class App extends Component {
@@ -33,12 +33,12 @@ class App extends Component {
     componentDidMount(){
       console.log('Did mount')
       this.getStatsTable();
-  }
+    }
 
-  getStatsTable(req, res, next){
-  fetch(`http://fantasy.premierleague.com/drf/bootstrap-static`, {
-    mode:'no-cors'
-  })
+    getStatsTable(){
+    fetch(`http://fantasy.premierleague.com/drf/bootstrap-static`, {
+      mode:'no-cors'
+    })
     .then(r => r.json())
 //why map not filter?
     .then((players) => {
@@ -57,31 +57,69 @@ class App extends Component {
           rc: player.red_cards,
           ppg: player.points_per_game,
           nowCost: player.now_cost,
-          totalPoints: player.total_points,
-          onPace: (parseInt(ppg)*38)
-        }
+          totalPoints: player.total_points
+          // onPace: (parseInt(ppg)*38)
+          }
+        })
+  // unexpected end of input somewhere here
+        this.setState({
+          playersTable: res.rows
+        });
+  // can i set state here, do I need to??
       })
-      this.setState({
-        playersTable: res.rows
-// can i set state here, do I need to??
-      });
-      next();
-    })
-    .catch(error => next(error));
-  }
-
-
-//end table stuff
+      .catch(err => console.log(err));
+    }
+// table component asks for the state as a prop i guess
+// end table stuff
 //
-//graph stuff
+//
+//
+// graph stuff
+// this will be shown on click so i think componentmount is wrong
   componentWillMount() {
     console.log('Will Mount')
-    this.getHistory
+    this.getGraphStats
   }
+
+  getGraphStats () {
+// can i do a forloop fetch?
+// 603 because I know length of array at/element-summary but
+// can i do like const arr = fetch and i<arr.length?
+//something with promise.all (ask Jason - waits for api to return before next goes)
+  for (i; i<= 603; i++){
+    fetch(`http://fantasy.premierleague.com/drf/element-summary/${i}`, {
+    mode:'no-cors'
+  })
+    .then(r => r.json())
+    .then((response) => {
+      const filtered = this.filterGraph(response);
+      this.setState({
+        playerGraph: filtered
+      });
+    })
+    .catch(err => console.log(err));
+    }
+  }
+
+  filterGraph(data) {
+    let values = [];
+    data.forEach((player) => {
+      values.push({x: player.history.round, y: player.history.total_points});
+    })
+    const final = [
+      {
+        name: 'Weekly Scores',
+        values: values,
+      },
+    ];
+    return final;
+  }
+
 //end graph stuff
 //
+//
 // signup,login, etc.
-
+//
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
     this.setState({
@@ -105,7 +143,6 @@ class App extends Component {
       console.log(this.state.loginForm)
     })
   }
-
 
   postSignup() {
     console.log('clicked')
@@ -186,7 +223,7 @@ class App extends Component {
               data={this.state.players}
             />
             <div className={styles["table"]}>
-            <Table
+            <JsonTable rows={ this.state.playersTable }
             />
           </div>
         </div>
