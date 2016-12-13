@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
-import JsonTable from 'react-json-table';
+import Table from '../Table.Table.jsx';
 
 
 class App extends Component {
@@ -37,39 +37,14 @@ class App extends Component {
 
 // get the data object from API and parse out the fields I want, then send to state
     getStatsTable(){
-      fetch(`/api`)
+      fetch(`/api/tables`)
       .then((players) => {
       this.setState({
-          playersTable: playerData
+          playersTable: players
         });
       })
       .catch(err => console.log(err));
     }
-    //   .then(r => r.json())
-    //   .then((players) => {
-    //     console.log(players)
-    //     let playerData = players.elements.map((player) => {
-    //       return {
-    //         firstName: player.first_name,
-    //         secondName: player.second_name,
-    //         team: player.team,
-    //         position: player.element_type,
-    //         cs: player.clean_sheets,
-    //         goalsConceded: player.goals_conceded,
-    //         saves: player.saves,
-    //         goalsScored: player.goals_scored,
-    //         assists: player.assists,
-    //         yc: player.yellow_cards,
-    //         rc: player.red_cards,
-    //         ppg: player.points_per_game,
-    //         nowCost: player.now_cost,
-    //         totalPoints: player.total_points
-    //         // onPace: (parseInt(ppg)*38)
-    //       }
-    //     }) // End of map function
-    // // unexpected end of input somewhere here
-    // can i set state here, do I need to??
-
 // table component asks for the state as a prop i guess
 // end table stuff
 //
@@ -77,45 +52,21 @@ class App extends Component {
 //
 // graph stuff
 // this will be shown on click so i think componentmount is wrong
-  componentWillMount() {
-    console.log('Will Mount')
-    this.getGraphStats
-  }
+    // componentWillMount() {
+    //   console.log('Will Mount')
+    //   this.getGraphStats
+    // }
 
-  getGraphStats () {
-// can i do a forloop fetch?
-// 603 because I know length of array at/element-summary but
-// can i do like const arr = fetch and i<arr.length?
-//something with promise.all (ask Jason - waits for api to return before next goes)
-  for (i; i<= 603; i++){
-    fetch(`http://fantasy.premierleague.com/drf/element-summary/${i}`, {
-    mode:'no-cors'
-  })
-    .then(r => r.json())
-    .then((response) => {
-      const filtered = this.filterGraph(response);
-      this.setState({
-        playerGraph: filtered
-      });
-    })
-    .catch(err => console.log(err));
-    }
-  }
-
-  filterGraph(data) {
-    let values = [];
-    data.forEach((player) => {
-      values.push({x: player.history.round, y: player.history.total_points});
-    })
-    const final = [
-      {
-        name: 'Weekly Scores',
-        values: values,
-      },
-    ];
-    return final;
-  }
-
+    // getGraphStats () {
+    // fetch(`/api/graph/:id`)
+    //   .then(r => r.json())
+    //   .then((graphStats) => {
+    //     this.setState({
+    //       playerGraph: graphStats
+    //     });
+    //   })
+    //   .catch(err => console.log(err));
+    // }
 //end graph stuff
 //
 //
@@ -214,7 +165,6 @@ class App extends Component {
             postLogin={this.postLogin.bind(this)}
             logout={this.logout.bind(this)}
           />
-        </div>
           <div className={styles["graph-container"]}>
             <Graph
               height={this.state.height}
@@ -223,9 +173,11 @@ class App extends Component {
               yAxisLabel={this.state.yAxisLabel}
               data={this.state.players}
             />
-            <div className={styles["table"]}>
-            <JsonTable rows={ this.state.playersTable }
-            />
+              <div className={styles["table-container"]}>
+              <Table
+                rows={ this.state.playersTable }
+              />
+            </div>
           </div>
         </div>
       </div>

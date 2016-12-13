@@ -29,7 +29,34 @@ function getStatsTable(req, res, next){
       next();
     })
     .catch(err => console.log(err));
-  }
+  };
+
+  function getGraphStats(req, res, next){
+      console.log('fetching graph data!')
+      fetch(`https://fantasy.premierleague.com/drf/element-summary/:id`)
+      //make this id attached to a button that fetches that data
+        .then(r => r.json())
+        .then((graphStats) => {
+          let filtered = graphStats.filterGraph(response);
+          res.graphStats = graphStats;
+          next();
+        })
+        .catch(err => console.log(err));
+     };
+
+  function filterGraph(graphStats) {
+      let values = [];
+      graphStats.forEach((player) => {
+        values.push({x: player.history.round, y: player.history.total_points});
+      })
+      const final = [
+        {
+          name: 'Weekly Scores',
+          values: values,
+        },
+      ];
+      return final;
+    }
 
 
-module.exports = { getStatsTable };
+module.exports = { getStatsTable, getGraphStats };
