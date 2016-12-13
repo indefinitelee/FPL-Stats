@@ -1,9 +1,12 @@
 table {
   border-spacing: 0;
+  background-color: red
 }
 
+
+
 td {
-  padding: 2px 5px;
+  padding: 5px 7px;
 }
 
 .jsonOdd {

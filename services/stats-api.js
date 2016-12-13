@@ -22,7 +22,7 @@ function getStatsTable(req, res, next){
           nowCost: player.now_cost,
           totalPoints: player.total_points,
           onPace: (parseInt(player.points_per_game)*38),
-          value: ((player.now_cost*100000)/player.total_points)
+          value: (player.total_points/(player.now_cost/10))
         }
       })
       next();
@@ -36,9 +36,7 @@ function getStatsTable(req, res, next){
       //make this id attached to a button that fetches that data
         .then(r => r.json())
         .then((graphStats) => {
-          let filtered = graphStats.filterGraph(response);
-          res.graphStats = graphStats;
-          next();
+           res.graphStats = graphStats.filterGraph(graph);
         })
         .catch(err => console.log(err));
      };

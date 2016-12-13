@@ -57,21 +57,21 @@ class App extends Component {
 //
 // graph stuff
 // this will be shown on click so i think componentmount is wrong
-    // componentWillMount() {
-    //   console.log('Will Mount')
-    //   this.getGraphStats
-    // }
+    componentWillMount() {
+      console.log('Will Mount')
+      this.getGraphStats
+    }
 
-    // getGraphStats () {
-    // fetch(`/api/graph/:id`)
-    //   .then(r => r.json())
-    //   .then((graphStats) => {
-    //     this.setState({
-    //       playerGraph: graphStats
-    //     });
-    //   })
-    //   .catch(err => console.log(err));
-    // }
+    getGraphStats () {
+    fetch(`/api/graph/:id`)
+      .then(r => r.json())
+      .then((graphStats) => {
+        this.setState({
+          playerGraph: graphStats
+        });
+      })
+      .catch(err => console.log(err));
+    }
 // end graph stuff
 
 
@@ -180,9 +180,11 @@ class App extends Component {
               data={this.state.players}
             />
           </div>
-          {/*} <div className={styles["table-container"]}>
-            <Table rows={this.state.playersTable}/>
-          </div>*/}
+          <div className={styles["table-container"]}>
+            <Table
+              rows={this.state.playersTable}
+            />
+          </div>
       </div>
     );
   }

@@ -1,13 +1,13 @@
-import React from 'react';
-import { JsonTable } from 'react-json-table';
+import React, { Component } from 'react';
+import JsonTable  from 'react-json-table';
 import styles from './Table.css';
 
-const Table = props => {
-  console.log(props)
+class Table extends Component {
+  render() {
   return(
     <div className={styles['table']}>
      <JsonTable
-        rows={props.playersTable}
+      rows={this.props.playersData}
         // settings={ this.getSettings() }
         // onClickCell={ this.onClickCell }
         // onClickHeader={ this.onClickHeader }
@@ -15,7 +15,9 @@ const Table = props => {
       />
       </div>
     );
+  }
 }
+
 export default Table;
   //   getSettings {
 
