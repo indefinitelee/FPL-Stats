@@ -3,10 +3,11 @@ import { JsonTable } from 'react-json-table';
 import styles from './Table.css';
 
 const Table = props => {
+  console.log(props)
   return(
     <div className={styles['table']}>
      <JsonTable
-        rows={ this.props.playersTable }
+        rows={props.playersTable}
         // settings={ this.getSettings() }
         // onClickCell={ this.onClickCell }
         // onClickHeader={ this.onClickHeader }

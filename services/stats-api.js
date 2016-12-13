@@ -5,7 +5,7 @@ function getStatsTable(req, res, next){
   fetch(`https://fantasy.premierleague.com/drf/bootstrap-static`)
     .then(r => r.json())
     .then((players) => {
-      let playerData = players.elements.map((player) => {
+      res.players = players.elements.map((player) => {
         return {
           firstName: player.first_name,
           secondName: player.second_name,
@@ -21,11 +21,10 @@ function getStatsTable(req, res, next){
           ppg: player.points_per_game,
           nowCost: player.now_cost,
           totalPoints: player.total_points,
-          onPace: (parseInt(player.points_per_game)*38)
+          onPace: (parseInt(player.points_per_game)*38),
+          value: ((player.now_cost*100000)/player.total_points)
         }
       })
-      console.log(playerData)
-      res.players = playerData;
       next();
     })
     .catch(err => console.log(err));

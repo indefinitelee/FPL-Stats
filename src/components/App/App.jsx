@@ -11,6 +11,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      playersTable: [],
+      tableTitle: 'Player Statistics',
       signupForm: {
         username: '',
         password: ''
@@ -19,8 +21,6 @@ class App extends Component {
         username: '',
         password: ''
       },
-      playersTable: [],
-      tableTitle: 'Player Statistics',
       playerGraph: [],
       graphTitle: 'Actual and Predicted Points',
       xAxisLabel: 'Game Week',
@@ -33,17 +33,21 @@ class App extends Component {
     componentDidMount(){
       console.log('Did mount!')
       this.getStatsTable();
+
     }
 
 // get the data object from API and parse out the fields I want, then send to state
     getStatsTable(){
+    console.log('fetching table!!')
       fetch(`/api/tables`)
-      .then((players) => {
-      this.setState({
-          playersTable: players
+      .then(r => r.json())
+      .then((playerData) => {
+        this.setState({
+          playersTable: playerData
         });
+        // console.log(playerData)
+        console.log(this.state.playersTable)
       })
-      console.log(playersTable, '_________')
       .catch(err => console.log(err));
     }
 // table component asks for the state as a prop i guess
@@ -68,11 +72,11 @@ class App extends Component {
     //   })
     //   .catch(err => console.log(err));
     // }
-//end graph stuff
-//
-//
+// end graph stuff
+
+
 // signup,login, etc.
-//
+
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
     this.setState({
@@ -166,6 +170,7 @@ class App extends Component {
             postLogin={this.postLogin.bind(this)}
             logout={this.logout.bind(this)}
           />
+        </div>
           <div className={styles["graph-container"]}>
             <Graph
               height={this.state.height}
@@ -174,13 +179,10 @@ class App extends Component {
               yAxisLabel={this.state.yAxisLabel}
               data={this.state.players}
             />
-              <div className={styles["table-container"]}>
-              <Table
-                rows={ this.state.playersTable }
-              />
-            </div>
           </div>
-        </div>
+          {/*} <div className={styles["table-container"]}>
+            <Table rows={this.state.playersTable}/>
+          </div>*/}
       </div>
     );
   }
