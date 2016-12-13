@@ -4,7 +4,7 @@ import Header from '../Header/Header.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
-import Table from '../Table.Table.jsx';
+import Table from '../Table/Table.jsx';
 
 
 class App extends Component {
@@ -43,6 +43,7 @@ class App extends Component {
           playersTable: players
         });
       })
+      console.log(playersTable, '_________')
       .catch(err => console.log(err));
     }
 // table component asks for the state as a prop i guess
