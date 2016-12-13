@@ -161,6 +161,7 @@ class App extends Component {
     return (
       <div className={styles["App"]}>
         <div className={styles["Header"]}>
+        <h1>FPL Stats Dashboard</h1>
           <Signup
             trackSignupForm={this.trackSignupForm.bind(this)}
             postSignup={this.postSignup.bind(this)}
@@ -182,7 +183,8 @@ class App extends Component {
           </div>
           <div className={styles["table-container"]}>
             <Table
-              rows={this.state.playersTable}
+              playersTable={this.state.playersTable}
+              getGraphStats={this.getGraphStats.bind(this)}
             />
           </div>
       </div>

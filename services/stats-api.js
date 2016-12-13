@@ -7,8 +7,9 @@ function getStatsTable(req, res, next){
     .then((players) => {
       res.players = players.elements.map((player) => {
         return {
+          id: player.id,
           firstName: player.first_name,
-          secondName: player.second_name,
+          lastName: player.second_name,
           team: player.team,
           position: player.element_type,
           cs: player.clean_sheets,
@@ -19,7 +20,7 @@ function getStatsTable(req, res, next){
           yc: player.yellow_cards,
           rc: player.red_cards,
           ppg: player.points_per_game,
-          nowCost: player.now_cost,
+          cost: player.now_cost,
           totalPoints: player.total_points,
           onPace: (parseInt(player.points_per_game)*38),
           value: (player.total_points/(player.now_cost/10))
