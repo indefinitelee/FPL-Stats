@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 
+// hits the api and returns desired fields, as well as two calculated fields.
 function getStatsTable(req, res, next){
   console.log('fetching player data!')
   fetch(`https://fantasy.premierleague.com/drf/bootstrap-static`)
@@ -31,23 +32,23 @@ function getStatsTable(req, res, next){
     .catch(err => console.log(err));
   };
 
+// fetches data from API and formats for use by rd3
   function getGraphStats(req, res, next){
-      console.log('fetching graph data!')
+      console.log('fetching player graph data!')
       fetch(`https://fantasy.premierleague.com/drf/element-summary/:id`)
       //make this id attached to a button that fetches that data
         .then(r => r.json())
         .then((graphStats) => {
-           res.graphStats = graphStats.filterGraph(graph);
+          res.graphStats = graphStats.formatGraph(graph);
         })
         .catch(err => console.log(err));
      };
 
-  function filterGraph(graphStats) {
+  function formatGraph(graph) {
       let values = [];
-      graphStats.forEach((player) => {
-    // this for each should not be here.
-        values.push({x: player.history.round, y: player.history.total_points});
-      })
+      graph.history_summary.map((week) => {
+        values.push({x: week.round, y: week.total_points});
+        });
       const final = [
         {
           name: 'Weekly Scores',

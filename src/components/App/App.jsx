@@ -56,11 +56,11 @@ class App extends Component {
 //
 // graph stuff
 // this will be shown on click so i think componentmount is wrong
-    componentWillMount() {
-      console.log('Will Mount')
-      this.getGraphStats
-    }
-
+    // componentWillMount() {
+    //   console.log('Will Mount')
+    //   this.getGraphStats
+    // }
+// this should get the stats for a given player id and send to the graphing function
     getGraphStats () {
     fetch(`/api/graph/:id`)
       .then(r => r.json())
@@ -173,11 +173,11 @@ class App extends Component {
         </div>
           <div className={styles["graph-container"]}>
             <Graph
+              data={this.state.playerGraph}
               height={this.state.height}
-              graphTitle={this.state.chartTitle}
+              graphTitle={this.state.graphTitle}
               xAxisLabel={this.state.xAxisLabel}
               yAxisLabel={this.state.yAxisLabel}
-              data={this.state.players}
             />
           </div>
           <div className={styles["table-container"]}>
