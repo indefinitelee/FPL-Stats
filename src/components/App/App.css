@@ -31,3 +31,10 @@ body {
   border-bottom: 2px solid rgb(30, 108, 117);
 }
 
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  overflow: scroll;
+}
+
