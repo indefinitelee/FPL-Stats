@@ -45,6 +45,7 @@ function getStatsTable(req, res, next){
   function filterGraph(graphStats) {
       let values = [];
       graphStats.forEach((player) => {
+    // this for each should not be here.
         values.push({x: player.history.round, y: player.history.total_points});
       })
       const final = [

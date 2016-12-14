@@ -30,7 +30,7 @@ class Table extends Component {
   render(){
     return (
       <div id="players-table">
-      <table>
+      <table style="word-wrap: break-word">
         <tbody>
         <tr>
           <th>First Name</th>

@@ -1,3 +1,6 @@
+//user authenitication courtesy of Daniel Pease @github handle
+// many thanks for the lessons and explanations
+
 const db = require('../lib/db');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
