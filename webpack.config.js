@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'FPL Stats',
+      title: 'ReactJS Hello World',
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),
@@ -50,9 +50,6 @@ module.exports = {
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
       { test: /\.jpg$/,
-        loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
-      },
-      { test: /\.png$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
       {

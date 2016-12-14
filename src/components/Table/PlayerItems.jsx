@@ -7,7 +7,9 @@ class PlayerItems extends Component {
     return (
       <div className="player-items">
         <table>
+          <tbody>
             <tr>
+              <td><p>{this.props.id}</p></td>
               <td><p>{this.props.firstName}</p></td>
               <td><p>{this.props.lastName}</p></td>
               <td><p>{this.props.position}</p></td>
@@ -25,6 +27,7 @@ class PlayerItems extends Component {
               <td><p>{this.props.pace}</p></td>
               <td><button onClick={() => this.props.getGraphStats(this.props.id)}>Graph this Player</button></td>
             </tr>
+          </tbody>
         </table>
       </div>
     );

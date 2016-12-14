@@ -23,6 +23,7 @@ class Table extends Component {
         cost={player.now_Cost}
         value={player.value}
         pace={player.pace}
+        getGraphStats={this.props.getGraphStats}
       />
       )
     }
@@ -32,22 +33,22 @@ class Table extends Component {
       <div id="players-table">
       <table>
         <tbody>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Clean Sheets</th>
-          <th>Goals Conceded</th>
-          <th>Saves</th>
-          <th>YC</th>
-          <th>RC</th>
-          <th>Assists</th>
-          <th>Goals Scored</th>
-          <th>Total Points</th>
-          <th>PPG</th>
-          <th>Cost</th>
-          <th>Value</th>
-          <th>Pace</th>
-          <th>Graph</th>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Clean Sheets</th>
+            <th>Goals Conceded</th>
+            <th>Saves</th>
+            <th>YC</th>
+            <th>RC</th>
+            <th>Assists</th>
+            <th>Goals Scored</th>
+            <th>Total Points</th>
+            <th>PPG</th>
+            <th>Cost</th>
+            <th>Value</th>
+            <th>Pace</th>
+            <th>Graph</th>
           </tr>
         </tbody>
       </table>

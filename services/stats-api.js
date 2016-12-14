@@ -34,14 +34,17 @@ function getStatsTable(req, res, next){
 
 // fetches data from API and formats for use by rd3
   function getGraphStats(req, res, next){
-      console.log('fetching player graph data!')
-      fetch(`https://fantasy.premierleague.com/drf/element-summary/:id`)
+      console.log('fetching graph data!')
+      const id = req.params.id;
+      fetch(`https://fantasy.premierleague.com/drf/element-summary/${id}`)
       //make this id attached to a button that fetches that data
         .then(r => r.json())
-        .then((graphStats) => {
-          res.graphStats = graphStats.formatGraph(graph);
+        .then((gStats) => {
+          console.log('returned');
+          res.graphStats = formatGraph(gStats);
+          next();
         })
-        .catch(err => console.log(err));
+        .catch(err => next(err));
      };
 
   function formatGraph(graph) {
@@ -55,6 +58,7 @@ function getStatsTable(req, res, next){
           values: values,
         },
       ];
+      console.log('returning final')
       return final;
     }
 

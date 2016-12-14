@@ -3,6 +3,7 @@ import { LineChart } from 'rd3';
 import styles from './Graph.css';
 
 const Graph = props => {
+
   return (
     <div className={styles['linechart']}>
       <LineChart
@@ -16,6 +17,5 @@ const Graph = props => {
       />
     </div>
   );
-
 }
 export default Graph;

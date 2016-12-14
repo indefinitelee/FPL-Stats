@@ -45,7 +45,6 @@ class App extends Component {
           playersTable: playerData
         });
         // console.log(playerData)
-        console.log(this.state.playersTable)
       })
       .catch(err => console.log(err));
     }
@@ -60,19 +59,24 @@ class App extends Component {
     //   console.log('Will Mount')
     //   this.getGraphStats
     // }
+
 // this should get the stats for a given player id and send to the graphing function
-    getGraphStats () {
-    fetch(`/api/graph/:id`)
-      .then(r => r.json())
-      .then((graphStats) => {
-        this.setState({
-          playerGraph: graphStats
-        });
-      })
-      .catch(err => console.log(err));
+    getGraphStats (id) {
+    console.log(id)
+    console.log('get graph stats')
+    fetch(`/api/graph/${id}`)
+    .then(r => r.json())
+    .then((graphStats) => {
+      console.log('fetch has returned')
+      this.setState({
+        playerGraph: graphStats
+      });
+    // console.log(this.state.playerGraph)
+    })
+    .catch(err => console.log(err));
     }
 // end graph stuff
-
+// if graphstats.length=0 don't display.
 
 // signup,login, etc.
 
@@ -101,7 +105,6 @@ class App extends Component {
   }
 
   postSignup() {
-    console.log('clicked')
     fetch('/user/signup', {
       method: 'POST',
       headers: {
@@ -123,7 +126,6 @@ class App extends Component {
   }
 
   postLogin() {
-    console.log('clicked')
     fetch('/user/login', {
       method: 'POST',
       headers: {
