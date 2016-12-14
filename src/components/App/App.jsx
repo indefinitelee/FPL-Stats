@@ -6,7 +6,6 @@ import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
 import Table from '../Table/Table.jsx';
 
-
 class App extends Component {
   constructor(props){
     super(props);

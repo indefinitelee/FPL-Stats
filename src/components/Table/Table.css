@@ -1,16 +1,33 @@
 table {
   border-spacing: 0;
-  background-color: red
+  background-color: #346658;
 }
 
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
 
+.table-container{
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  overflow: scroll;
+}
+
+#players-table{
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  overflow: scroll;
+}
+
+th {
+    text-align: center;
+}
 
 td {
   padding: 5px 7px;
-}
-
-.jsonOdd {
-  background: #eee;
+  text-align: left;
 }
 
 .rowSelected {
