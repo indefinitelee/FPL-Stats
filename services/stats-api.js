@@ -49,7 +49,7 @@ function getStatsTable(req, res, next){
 
   function formatGraph(graph) {
       let values = [];
-      graph.history_summary.map((week) => {
+      graph.history.map((week) => {
         values.push({x: week.round, y: week.total_points});
         });
       const final = [

@@ -4,7 +4,7 @@ table {
 }
 
 table tr:nth-child(even) {
-    background-color: #fafafa;
+    background-color: #789789;
 }
 
 .table-container{
@@ -12,13 +12,20 @@ table tr:nth-child(even) {
   justify-content: center;
   align-content: space-around;
   overflow: scroll;
+
 }
 
-#players-table{
+.player-items table, th, tr {
+  border: 1px solid black;
+}
+
+#players-table {
   display: flex;
   justify-content: center;
   align-content: space-around;
   overflow: scroll;
+  width: 90vh;
+  height: 90vh;
 }
 
 th {

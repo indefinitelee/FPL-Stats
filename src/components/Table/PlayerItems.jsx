@@ -9,22 +9,22 @@ class PlayerItems extends Component {
         <table>
           <tbody>
             <tr>
-              <td><p>{this.props.id}</p></td>
-              <td><p>{this.props.firstName}</p></td>
-              <td><p>{this.props.lastName}</p></td>
-              <td><p>{this.props.position}</p></td>
-              <td><p>{this.props.cleanSheets}</p></td>
-              <td><p>{this.props.goalsConceded}</p></td>
-              <td><p>{this.props.saves}</p></td>
-              <td><p>{this.props.yc}</p></td>
-              <td><p>{this.props.rc}</p></td>
-              <td><p>{this.props.assists}</p></td>
-              <td><p>{this.props.goalsScored}</p></td>
-              <td><p>{this.props.totalPoints}</p></td>
-              <td><p>{this.props.ppg}</p></td>
-              <td><p>{this.props.cost}</p></td>
-              <td><p>{this.props.value}</p></td>
-              <td><p>{this.props.pace}</p></td>
+              <td>{this.props.id}</td>
+              <td>{this.props.firstName}</td>
+              <td>{this.props.lastName}</td>
+              <td>{this.props.position}</td>
+              <td>{this.props.cleanSheets}</td>
+              <td>{this.props.goalsConceded}</td>
+              <td>{this.props.saves}</td>
+              <td>{this.props.yc}</td>
+              <td>{this.props.rc}</td>
+              <td>{this.props.assists}</td>
+              <td>{this.props.goalsScored}</td>
+              <td>{this.props.totalPoints}</td>
+              <td>{this.props.ppg}</td>
+              <td>{this.props.cost}</td>
+              <td>{this.props.value}</td>
+              <td>{this.props.pace}</td>
               <td><button onClick={() => this.props.getGraphStats(this.props.id)}>Graph this Player</button></td>
             </tr>
           </tbody>

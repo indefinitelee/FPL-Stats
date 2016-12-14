@@ -21,7 +21,7 @@ class App extends Component {
         password: ''
       },
       playerGraph: [],
-      graphTitle: 'Actual and Predicted Points',
+      graphTitle: 'Points by Game',
       xAxisLabel: 'Game Week',
       yAxisLabel: 'Points',
       currentToken: ''
