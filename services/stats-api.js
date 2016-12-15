@@ -23,7 +23,7 @@ function getStatsTable(req, res, next){
           ppg: player.points_per_game,
           total: player.total_points,
           cost: player.now_cost/10,
-          value: Math.round((player.total_points/(player.now_cost/10))*100)/100,
+          value: player.value_season
           pace: ((parseInt(player.points_per_game))*38)
         }
       })
