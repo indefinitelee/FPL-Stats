@@ -9,23 +9,23 @@ class PlayerItems extends Component {
         <table>
           <tbody>
             <tr>
-              <td className="id">{this.props.id}</td>
-              <td className="first">{this.props.firstName}</td>
-              <td className="last">{this.props.lastName}</td>
-              <td className="position">{this.props.position}</td>
-              <td className="cs">{this.props.cleanSheets}</td>
-              <td className="gc">{this.props.goalsConceded}</td>
-              <td className="saves">{this.props.saves}</td>
-              <td className="yc">{this.props.yc}</td>
-              <td className="rc">{this.props.rc}</td>
-              <td className="assists">{this.props.assists}</td>
-              <td className="scored">{this.props.goalsScored}</td>
-              <td className="total">{this.props.totalPoints}</td>
-              <td className="ppg">{this.props.ppg}</td>
-              <td className="cost">{this.props.cost}</td>
-              <td className="value">{this.props.value}</td>
-              <td className="pace">{this.props.pace}</td>
-              <td className=""><button onClick={() => this.props.getGraphStats(this.props.id)}>Graph this Player</button></td>
+              <td>{this.props.id}</td>
+              <td>{this.props.firstName}</td>
+              <td>{this.props.lastName}</td>
+              <td>{this.props.position}</td>
+              <td>{this.props.cleanSheets}</td>
+              <td>{this.props.goalsConceded}</td>
+              <td>{this.props.saves}</td>
+              <td>{this.props.yc}</td>
+              <td>{this.props.rc}</td>
+              <td>{this.props.assists}</td>
+              <td>{this.props.goalsScored}</td>
+              <td>{this.props.totalPoints}</td>
+              <td>{this.props.ppg}</td>
+              <td>{this.props.cost}</td>
+              <td>{this.props.value}</td>
+              <td>{this.props.pace}</td>
+              <td><button onClick={() => this.props.getGraphStats(this.props.id)}>Graph this Player</button></td>
             </tr>
           </tbody>
         </table>
