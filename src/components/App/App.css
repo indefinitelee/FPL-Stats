@@ -3,38 +3,34 @@ body {
 }
 
 .App {
-  height: 100vh;
+  height: 140vh;
   width: 100vw;
   margin: 0;
   background-color: #eff9f4;
   font-family: arial;
+  position: absolute;
 }
 
-.chart {
-  height: 70vh;
-  width: 80vh;
-  position: absolute;
-  top: 17vh;
-  left: 32vw;
-  background-color: #FAFAFA;
-  border-top: 2px solid rgb(30, 108, 117);
-  border-bottom: 2px solid rgb(30, 108, 117);
-}
 .graph-container {
-  height: 85vh;
-  width: 81vw;
+  height: 48vh;
+  width: 42vw;
   position: absolute;
-  top: 17vh;
-  left: 32vw;
-  background-color: #FAFAFA;
-  border-top: 2px solid rgb(30, 108, 117);
-  border-bottom: 2px solid rgb(30, 108, 117);
+  top: 98vh;
+  left: 10vw;
+  background-color: #F9F9FF;
+  border-top: 4px solid rgb(30, 108, 117);
+  border-bottom: 4px solid rgb(30, 108, 117);
 }
 
 .table-container {
   display: flex;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
   overflow: scroll;
+  top: 14vh;
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  margin-top: 50px;
 }
 

@@ -1,4 +1,4 @@
-//user authenitication courtesy of Daniel Pease @github handle
+//user authenitication courtesy of @daniel-j-pease
 // many thanks for the lessons and explanations
 
 const db = require('../lib/db');

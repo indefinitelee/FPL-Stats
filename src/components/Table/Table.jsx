@@ -30,10 +30,11 @@ class Table extends Component {
 
   render(){
     return (
-      <div id="players-table">
+      <div id="headers-table">
       <table>
         <tbody>
           <tr>
+            <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Clean Sheets</th>

@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 app.use(express.static(path.join(__dirname, 'dist')));
-// app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup']}));
+// app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico','/', '/user', '/user/login', '/user/signup']}));
 
 const userRouter = require('./routes/user.js');
 const apiRouter = require('./routes/api.js');

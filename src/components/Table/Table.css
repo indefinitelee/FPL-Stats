@@ -1,48 +1,69 @@
 table {
-  border-spacing: 0;
-  background-color: #346658;
+  background-color: #386658;
+  width: 100%;
+  margin-bottom: 6px;
+  border-radius: 7px;
+  font-size: 20px;
 }
 
-table tr:nth-child(even) {
-    background-color: #789789;
+th, td {
+  padding: 15px;
+  text-align: center;
 }
 
-.table-container{
-  display: flex;
-  justify-content: center;
-  align-content: space-around;
-  overflow: scroll;
-
+tr:hover {
+  background-color: #f5f5f5
 }
 
-.player-items table, th, tr {
-  border: 1px solid black;
+.id{
+  width: 20px;
+}
+.first{
+  width:50px;
+}
+.last{
+  width: 50px;
+}
+.position{
+  width: 50px;
+}
+.cs{
+  width: 50px;
+}
+.gc{
+  width: 50px;
+}
+.saves{
+  width: 50px;
+}
+.yc{
+  width: 50px;
+}
+.rc{
+  width: 50px;
+}
+.assists{
+  width: 50px;
+}
+.scored{
+  width: 50px;
+}
+.total{
+  width: 50px;
+}
+.ppg{
+  width: 50px;
+}
+.cost{
+  width: 50px;
+}
+.value{
+  width: 50px;
+}
+.pace{
+  width: 50px;
+}
+.button{
+  width: 50px;
 }
 
-#players-table {
-  display: flex;
-  justify-content: center;
-  align-content: space-around;
-  overflow: scroll;
-  width: 90vh;
-  height: 90vh;
-}
-
-th {
-    text-align: center;
-}
-
-td {
-  padding: 5px 7px;
-  text-align: left;
-}
-
-.rowSelected {
-  background: #ffe;
-}
-.cellSelected {
-  background: #eef;
-}
-.headerSelected {
-  color: blue;
-}
