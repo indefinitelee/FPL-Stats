@@ -9,10 +9,27 @@ class PlayerItems extends Component {
         <table>
           <tbody>
             <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Clean Sheets</th>
+              <th>Goals Conceded</th>
+              <th>Saves</th>
+              <th>YC</th>
+              <th>RC</th>
+              <th>Assists</th>
+              <th>Goals Scored</th>
+              <th>PPG</th>
+              <th>Total Points</th>
+              <th>Cost</th>
+              <th>Value</th>
+              <th>Pace</th>
+              <th>Graph</th>
+            </tr>
+            <tr>
               <td>{this.props.id}</td>
               <td>{this.props.firstName}</td>
               <td>{this.props.lastName}</td>
-              <td>{this.props.position}</td>
               <td>{this.props.cleanSheets}</td>
               <td>{this.props.goalsConceded}</td>
               <td>{this.props.saves}</td>
@@ -20,8 +37,8 @@ class PlayerItems extends Component {
               <td>{this.props.rc}</td>
               <td>{this.props.assists}</td>
               <td>{this.props.goalsScored}</td>
-              <td>{this.props.totalPoints}</td>
               <td>{this.props.ppg}</td>
+              <td>{this.props.total}</td>
               <td>{this.props.cost}</td>
               <td>{this.props.value}</td>
               <td>{this.props.pace}</td>

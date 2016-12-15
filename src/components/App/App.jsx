@@ -44,7 +44,7 @@ class App extends Component {
         this.setState({
           playersTable: playerData
         });
-        // console.log(playerData)
+        console.log(playerData)
       })
       .catch(err => console.log(err));
     }

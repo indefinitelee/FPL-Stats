@@ -10,7 +10,6 @@ class Table extends Component {
         id={player.id}
         firstName={player.firstName}
         lastName={player.lastName}
-        position={player.position}
         cleanSheets={player.cs}
         goalsConceded={player.goalsConceded}
         saves={player.saves}
@@ -19,8 +18,8 @@ class Table extends Component {
         assists={player.assists}
         goalsScored={player.goalsScored}
         ppg={player.ppg}
-        total={player.totalPoints}
-        cost={player.now_Cost}
+        total={player.total}
+        cost={player.cost}
         value={player.value}
         pace={player.pace}
         getGraphStats={this.props.getGraphStats}
@@ -30,29 +29,8 @@ class Table extends Component {
 
   render(){
     return (
-      <div id="headers-table">
-      <table>
-        <tbody>
-          <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Clean Sheets</th>
-            <th>Goals Conceded</th>
-            <th>Saves</th>
-            <th>YC</th>
-            <th>RC</th>
-            <th>Assists</th>
-            <th>Goals Scored</th>
-            <th>Total Points</th>
-            <th>PPG</th>
-            <th>Cost</th>
-            <th>Value</th>
-            <th>Pace</th>
-            <th>Graph</th>
-          </tr>
-        </tbody>
-      </table>
+      <div className="render-player-items">
+
       {this.renderPlayers()}
       </div>
     );

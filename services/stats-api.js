@@ -11,20 +11,20 @@ function getStatsTable(req, res, next){
           id: player.id,
           firstName: player.first_name,
           lastName: player.second_name,
-          team: player.team,
-          position: player.element_type,
+          // team: player.team,
+          // position: player.element_type, £
           cs: player.clean_sheets,
           goalsConceded: player.goals_conceded,
           saves: player.saves,
-          goalsScored: player.goals_scored,
-          assists: player.assists,
           yc: player.yellow_cards,
           rc: player.red_cards,
+          assists: player.assists,
+          goalsScored: player.goals_scored,
           ppg: player.points_per_game,
-          cost: player.now_cost,
-          totalPoints: player.total_points,
-          onPace: ((parseInt(player.points_per_game))*38),
-          value: (Math.round((player.total_points/(player.now_cost/10))))
+          total: player.total_points,
+          cost: player.now_cost/10,
+          value: Math.round((player.total_points/(player.now_cost/10))*100)/100,
+          pace: ((parseInt(player.points_per_game))*38)
         }
       })
       next();
