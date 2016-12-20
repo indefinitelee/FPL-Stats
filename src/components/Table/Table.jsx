@@ -7,7 +7,7 @@ class Table extends Component {
   return(
     <div className={styles['table']}>
      <JsonTable
-      rows={this.props.playersData}
+      rows={this.props.rows}
         // settings={ this.getSettings() }
         // onClickCell={ this.onClickCell }
         // onClickHeader={ this.onClickHeader }
