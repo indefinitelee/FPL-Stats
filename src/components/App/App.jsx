@@ -5,6 +5,7 @@ import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
 import Graph from '../Graph/Graph.jsx';
 import Table from '../Table/Table.jsx';
+import JsonTable from 'react-json-table';
 
 class App extends Component {
   constructor(props){
@@ -184,8 +185,7 @@ class App extends Component {
           </div>
           <div className={styles["table-container"]}>
             <Table
-              playersTable={this.state.playersTable}
-              getGraphStats={this.getGraphStats.bind(this)}
+              rows={this.state.playersTable}
             />
           </div>
       </div>
