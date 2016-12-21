@@ -40,12 +40,16 @@ function getStatsTable(req, res, next){
       //make this id attached to a button that fetches that data
         .then(r => r.json())
         .then((gStats) => {
-          console.log('returned');
           res.graphStats = formatGraph(gStats);
+          console.log(res.graphStats);
           next();
         })
         .catch(err => next(err));
      };
+
+  function getGraphSeries2(rea, res, next){
+
+  }
 
   function formatGraph(graph) {
       let values = [];
