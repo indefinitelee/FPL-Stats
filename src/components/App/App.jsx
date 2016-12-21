@@ -185,7 +185,8 @@ class App extends Component {
           </div>
           <div className={styles["table-container"]}>
             <Table
-              rows={this.state.playersTable}
+              playersTable={this.state.playersTable}
+              getGraphStats={this.getGraphStats.bind(this)}
             />
           </div>
       </div>
