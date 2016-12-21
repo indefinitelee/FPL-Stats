@@ -9,7 +9,7 @@ class PlayerItems extends Component {
         <table>
           <tbody>
             <tr>
-              <th>Id</th>
+              {/*<th>Id</th>*/}
               <th>First Name</th>
               <th>Last Name</th>
               <th>Clean Sheets</th>
@@ -28,7 +28,7 @@ class PlayerItems extends Component {
               <th>Total Estimate</th>
             </tr>
             <tr>
-              <td>{this.props.id}</td>
+              {/*<td>{this.props.id}</td>*/}
               <td>{this.props.firstName}</td>
               <td>{this.props.lastName}</td>
               <td>{this.props.cleanSheets}</td>
