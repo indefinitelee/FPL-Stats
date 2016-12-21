@@ -22,9 +22,9 @@ function getStatsTable(req, res, next){
           goalsScored: player.goals_scored,
           ppg: player.points_per_game,
           total: player.total_points,
-          cost:  "£" + player.now_cost/10,
-          value: player.value_season,
           pace: ((parseInt(player.points_per_game))*38),
+          cost:  "£" + player.now_cost/10,
+          value: player.value_season
         }
       })
       next();
@@ -46,10 +46,6 @@ function getStatsTable(req, res, next){
         })
         .catch(err => next(err));
      };
-
-  function getGraphSeries2(rea, res, next){
-
-  }
 
   function formatGraph(graph) {
       let values = [];

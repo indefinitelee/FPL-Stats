@@ -7,7 +7,7 @@ class Table extends Component {
     return this.props.playersTable.map((player, i) =>
       <PlayerItems
         key={i}
-        // id={player.id}
+        id={player.id}
         firstName={player.firstName}
         lastName={player.lastName}
         cleanSheets={player.cs}
@@ -19,11 +19,10 @@ class Table extends Component {
         goalsScored={player.goalsScored}
         ppg={player.ppg}
         total={player.total}
+        getGraphStats={this.props.getGraphStats}
+        pace={player.pace}
         cost={player.cost}
         value={player.value}
-        pace={player.pace}
-        getGraphStats={this.props.getGraphStats}
-        getGraphSeries2={this.props.getGraphSeries2}
       />
       )
     }

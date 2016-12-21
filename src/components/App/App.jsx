@@ -76,6 +76,17 @@ class App extends Component {
     })
     .catch(err => console.log(err));
     }
+
+    // graphPace(pace){
+    // fetch(`/api/graph/${pace}`)
+    // .then(r => r.json())
+    // .then((paceStats) => {
+    //   this.setState({
+    //     playerGraph: paceStats
+    //   });
+    // })
+    // .catch(err => console.log(err));
+    // }
 // end graph stuff
 // if graphstats.length=0 don't display.
 
