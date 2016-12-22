@@ -22,9 +22,10 @@ function getStatsTable(req, res, next){
           goalsScored: player.goals_scored,
           ppg: player.points_per_game,
           total: player.total_points,
-          pace: ((parseInt(player.points_per_game))*38),
+          pace: if (estimate !== NULL) {((parseInt(player.points_per_game))*38)}else{parseInt(estimate)*38} ,
           cost:  "£" + player.now_cost/10,
-          value: player.value_season
+          value: player.value_season,
+          estimate: ''
         }
       })
       next();

@@ -23,6 +23,8 @@ class Table extends Component {
         pace={player.pace}
         cost={player.cost}
         value={player.value}
+        estimate=''
+        trackEstimate={this.props.trackEstimate}
       />
       )
     }

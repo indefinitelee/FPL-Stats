@@ -43,7 +43,7 @@ class PlayerItems extends Component {
               <td>{this.props.cost}</td>
               <td>{this.props.value}</td>
               {/*<td><button onClick={() => this.props.graphPace(this.props.pace)}>Graph Pace</button></td>*/}
-              <td><input onChange={() => this.props.trackCustomForm} type="text" placeholder="your total estimate"/></td>
+              <td><input onChange={() => this.props.trackEstimate} type="text" placeholder="your total estimate"/></td>
             </tr>
           </tbody>
         </table>

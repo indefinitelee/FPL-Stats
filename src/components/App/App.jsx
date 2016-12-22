@@ -77,16 +77,9 @@ class App extends Component {
     .catch(err => console.log(err));
     }
 
-    // graphPace(pace){
-    // fetch(`/api/graph/${pace}`)
-    // .then(r => r.json())
-    // .then((paceStats) => {
-    //   this.setState({
-    //     playerGraph: paceStats
-    //   });
-    // })
-    // .catch(err => console.log(err));
-    // }
+    getCustom(){
+
+    }
 // end graph stuff
 // if graphstats.length=0 don't display.
 
@@ -198,6 +191,7 @@ class App extends Component {
             <Table
               playersTable={this.state.playersTable}
               getGraphStats={this.getGraphStats.bind(this)}
+              getCustom={this.getCustom.bind(this)}
             />
           </div>
       </div>
