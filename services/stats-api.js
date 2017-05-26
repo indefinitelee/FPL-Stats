@@ -24,7 +24,7 @@ function getStatsTable(req, res, next){
           total: player.total_points,
           cost:  "£ " + player.now_cost/10,
           value: player.value_season,
-          pace: (parseFloat(player.points_per_game)*38)
+          pace: ((parseFloat(player.points_per_game).toFixed(2))*38)
         }
       })
       next();
