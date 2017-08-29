@@ -125,10 +125,6 @@ class App extends Component {
     })
   }
 
-  handleCreation() {
-
-  }
-
   postLogin() {
     fetch('/user/login', {
       method: 'POST',
@@ -177,8 +173,13 @@ class App extends Component {
             logout={this.logout.bind(this)}
           />
         </div>
-          <div className="FB">
-            <FB
+          <div className={styles["graph-container"]}>
+            <Graph
+              data={this.state.playerGraph}
+              height={this.state.height}
+              graphTitle={this.state.graphTitle}
+              xAxisLabel={this.state.xAxisLabel}
+              yAxisLabel={this.state.yAxisLabel}
             />
           </div>
 
