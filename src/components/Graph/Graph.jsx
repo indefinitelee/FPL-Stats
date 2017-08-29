@@ -10,6 +10,7 @@ const Graph = props => {
         data={props.data}
         height={450}
         width={750}
+        margin={left:10}
         fill={'#234981'}
         title={props.graphTitle}
         yAxisLabel={props.yAxisLabel}
