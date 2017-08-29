@@ -12,11 +12,12 @@ body {
 }
 
 .graph-container {
-  height: 48%;
-  width: 42%;
+  height: 460px;
+  width: 760px;
   position: absolute;
   top: 98%;
   left: 15%;
+  padding-left: 5px;
   background-color: #F9F9FF;
   border-top: 4px solid rgb(30, 108, 117);
 }
