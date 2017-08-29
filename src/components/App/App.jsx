@@ -15,7 +15,7 @@ class App extends Component {
       signupForm: {
         username: '',
         password: ''
-    },
+      },
       loginForm: {
         username: '',
         password: ''
@@ -125,6 +125,10 @@ class App extends Component {
     })
   }
 
+  handleCreation() {
+
+  }
+
   postLogin() {
     fetch('/user/login', {
       method: 'POST',
@@ -173,15 +177,11 @@ class App extends Component {
             logout={this.logout.bind(this)}
           />
         </div>
-          <div className={styles["graph-container"]}>
-            <Graph
-              data={this.state.playerGraph}
-              height={this.state.height}
-              graphTitle={this.state.graphTitle}
-              xAxisLabel={this.state.xAxisLabel}
-              yAxisLabel={this.state.yAxisLabel}
+          <div className="FB">
+            <FB
             />
           </div>
+
           <div className={styles["table-container"]}>
             <Table
               playersTable={this.state.playersTable}

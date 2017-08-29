@@ -12,14 +12,13 @@ body {
 }
 
 .graph-container {
-  height: 48vh;
-  width: 42vw;
+  height: 48%;
+  width: 42%;
   position: absolute;
-  top: 98vh;
-  left: 10vw;
+  top: 98%;
+  left: 15%;
   background-color: #F9F9FF;
   border-top: 4px solid rgb(30, 108, 117);
-  border-bottom: 4px solid rgb(30, 108, 117);
 }
 
 .table-container {
@@ -27,8 +26,8 @@ body {
   justify-content: center;
   align-content: space-between;
   overflow: scroll;
-  top: 14vh;
-  height: 70vh;
+  top: 14%;
+  height: 70%;
   width: 90%;
   position: absolute;
   margin-top: 50px;
