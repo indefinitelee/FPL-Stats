@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-// hits the api and returns desired fields, as well as two calculated fields.
+// hits the api akknd returns desired fields, as well as two calculated fields.
 function getStatsTable(req, res, next){
   console.log('fetching player data!')
   fetch(`https://fantasy.premierleague.com/drf/bootstrap-static`)
